@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Fri Jan 05 23:56:54 KST 2018
+#Sat Jan 06 23:54:08 KST 2018
+org.eclipse.jst.jee.server\:ex4=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex4
 org.eclipse.jst.jee.server\:ex3=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex3
 org.eclipse.jst.jee.server\:ex2=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex2
 org.eclipse.jst.jee.server\:helloworld=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/helloworld
