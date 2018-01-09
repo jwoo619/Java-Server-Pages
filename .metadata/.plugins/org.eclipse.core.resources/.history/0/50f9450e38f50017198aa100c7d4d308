@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <%
+    Object obj1 = session.getAttribute("s_name");
+    String s_name = (String)obj1;
+    out.println(s_name + "<br>");
+    
+    Object obj2 = session.getAttribute("mynum");
+    int mynum = (int)obj2;
+    out.println(mynum + "<br>");
+    
+    out.println("=========================<br>");
+    
+    String sname;
+    String svalue;
+  %>
+</body>
+</html>
