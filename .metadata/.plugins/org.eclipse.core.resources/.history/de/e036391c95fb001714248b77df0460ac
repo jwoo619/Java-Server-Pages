@@ -1,0 +1,9 @@
+package ex12;
+
+public class MemberDAO {
+	
+	
+	private String url;
+	private String uid;
+	private String upw;
+}
