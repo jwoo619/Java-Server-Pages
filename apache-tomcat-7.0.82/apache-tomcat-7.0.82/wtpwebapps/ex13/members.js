@@ -18,7 +18,7 @@ function infoConfirm(){
 		return;
 	}
 	
-	if(document.reg_frm.pw.value.length != document.reg_frm.pw_check.value){
+	if(document.reg_frm.pw.value != document.reg_frm.pw_check.value){
 		alert("비밀번호가 일치하지 않습니다.");
 		reg_frm.pw.focus();
 		return;

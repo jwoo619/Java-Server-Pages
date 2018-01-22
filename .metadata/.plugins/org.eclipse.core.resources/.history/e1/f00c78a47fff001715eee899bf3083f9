@@ -1,0 +1,19 @@
+package ex13;
+
+import java.sql.*;
+import javax.sql.*;
+
+import com.mysql.jdbc.Connection;
+
+import javax.naming.*;
+public class test {
+	
+	
+
+		 Context context=new InitialContext();
+		 DataSource ds=(DataSource)context.lookup("java:comp/env/jdbc/mysql");
+		 Connection connection = (Connection) ds.getConnection();
+
+
+}
+

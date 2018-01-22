@@ -1,0 +1,15 @@
+package ex13;
+
+import java.sql.*;
+import javax.sql.*;
+import javax.naming.*;
+
+
+public class test {
+	
+	public static void main(String[] args) {
+		
+	}
+    
+}
+

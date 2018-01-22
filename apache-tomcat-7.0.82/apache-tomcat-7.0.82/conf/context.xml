@@ -30,4 +30,17 @@
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
 
+<Resource name="jdbc/mysql"
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="root"
+        password="1234"
+        driverClassName="com.mysql.jdbc.Driver"
+        factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+        url="jdbc:mysql://localhost:3306/members"
+        logintimeout="100"
+        maxActive="500"
+        maxIdle="100"/>
+
+
 </Context>

@@ -1,0 +1,28 @@
+package ex13;
+
+import java.sql.*;
+import javax.sql.*;
+
+import com.mysql.jdbc.Connection;
+
+import javax.naming.*;
+
+
+public class test {
+	
+	
+	
+	public static void main(String[] args) {
+		try{
+			 Context context=new InitialContext();
+			 DataSource ds=(DataSource)context.lookup("java:comp/env/jdbc/mysql");
+			 Connection connection = (Connection) ds.getConnection();
+			 System.out.println("DB연동 성공");
+			}catch(Exception e){
+			 e.printStackTrace();
+			 System.out.println("실패");
+			}
+	}
+    
+}
+

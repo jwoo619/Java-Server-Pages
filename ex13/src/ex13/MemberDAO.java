@@ -2,14 +2,23 @@ package ex13;
 
 import java.sql.ResultSet;
 
-import javax.activation.DataSource;
+import java.sql.*;
+import javax.sql.*;
+import javax.naming.*;
+import javax.naming.Context;
 import javax.naming.InitialContext;
-
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import javax.naming.InitialContext;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.StatementImpl;
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
-import com.sun.xml.internal.bind.CycleRecoverable.Context;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 
 public class MemberDAO {
 
@@ -23,8 +32,12 @@ public class MemberDAO {
 	
 	private static MemberDAO instance = new MemberDAO();
 	
-	private MemberDAO(){
-		
+	public MemberDAO(){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 	public static MemberDAO getInstance(){
@@ -39,9 +52,9 @@ public class MemberDAO {
 		String query = "insert info members values (?,?,?,?,?,?);";
 		
 		try {
-			
-			connection = getConnection();
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/members", "root", "1234");
 			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+			
 			preparedStatement.setString(1, dto.getId());
 			preparedStatement.setString(2, dto.getPw());
 			preparedStatement.setString(3, dto.getName());
@@ -61,7 +74,7 @@ public class MemberDAO {
 				// TODO: handle exception
 			}
 		}
-		
+		System.out.println(ri);
 		return ri;
 	}
 	
@@ -75,7 +88,7 @@ public class MemberDAO {
 		
 		try {
 			
-			connection = getConnection();
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/members", "root", "1234");
 			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
 			preparedStatement.setString(1, id);
 			resultSet = preparedStatement.executeQuery();
@@ -111,7 +124,7 @@ public class MemberDAO {
 		
 		try {
 			
-			connection = getConnection();
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/members", "root", "1234");
 			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
 			preparedStatement.setString(1, id);
 			resultSet = preparedStatement.executeQuery();
@@ -150,7 +163,7 @@ public class MemberDAO {
 		MemberDTO dto = null;
 		
 		try {
-			connection = getConnection();
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/members", "root", "1234");
 			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
 			preparedStatement.setString(1, id);
 			set = preparedStatement.executeQuery();
@@ -188,7 +201,7 @@ public class MemberDAO {
 		String query = "update members set pw=?, mail=?, address=? where id=?";
 		
 		try {
-			connection = getConnection();
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/members", "root", "1234");
 			pstmt = (PreparedStatement) connection.prepareStatement(query);
 			pstmt.setString(1, dto.getPw());
 			pstmt.setString(2, dto.getMail());
@@ -209,7 +222,7 @@ public class MemberDAO {
 		return ri;
 	}
 	
-	
+/*	
 	private Connection getConnection(){
 		
 		Context context = null;
@@ -217,14 +230,16 @@ public class MemberDAO {
 		Connection connection = null;
 		try {
 			context = (Context) new InitialContext();
-			dataSource = (DataSource) ((InitialContext) context).lookup("java:comp/env/jdbc/myoracle");
-			connection = (Connection) ((StatementImpl) dataSource).getConnection();
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
+			connection = (Connection) dataSource.getConnection();
 		} catch (Exception e) {
 			// TODO: handle exception
+		    System.out.println("nonono");
 		}
 		
 		return connection;
 	}
-	
+*/	
+
 	
 }
