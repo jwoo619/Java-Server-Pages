@@ -24,3 +24,16 @@
 0:0:0:0:0:0:0:1 - - [23/Jan/2018:00:24:53 +0900] "GET /ex13/join.jsp HTTP/1.1" 200 935
 0:0:0:0:0:0:0:1 - - [23/Jan/2018:00:24:58 +0900] "POST /ex13/joinok.jsp HTTP/1.1" 200 371
 0:0:0:0:0:0:0:1 - - [23/Jan/2018:00:25:00 +0900] "GET /ex13/login.jsp HTTP/1.1" 200 571
+127.0.0.1 - - [23/Jan/2018:12:21:48 +0900] "GET / HTTP/1.1" 200 11418
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:21:50 +0900] "GET /fileuploadex/form.jsp HTTP/1.1" 200 417
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:22:20 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:22:49 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:22:56 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:22:59 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:29:19 +0900] "GET /fileuploadex/form.jsp HTTP/1.1" 200 417
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:29:30 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:29:52 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:30:09 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:30:52 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:31:05 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 278
+0:0:0:0:0:0:0:1 - - [23/Jan/2018:12:31:10 +0900] "POST /fileuploadex/ok.jsp HTTP/1.1" 200 274
