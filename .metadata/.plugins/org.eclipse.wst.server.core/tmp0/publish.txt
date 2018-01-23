@@ -1,9 +1,10 @@
 #Tomcat publish data
-#Tue Jan 23 12:30:44 KST 2018
+#Tue Jan 23 15:45:24 KST 2018
 org.eclipse.jst.jee.server\:ex8=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex8
 org.eclipse.jst.jee.server\:ex7=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex7
 org.eclipse.jst.jee.server\:fileuploadex=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/fileuploadex
 org.eclipse.jst.jee.server\:ex6=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex6
+org.eclipse.jst.jee.server\:Expression\ Language=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/Expression Language
 org.eclipse.jst.jee.server\:ex5=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex5
 org.eclipse.jst.jee.server\:ex4=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex4
 org.eclipse.jst.jee.server\:ex13=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/ex13
