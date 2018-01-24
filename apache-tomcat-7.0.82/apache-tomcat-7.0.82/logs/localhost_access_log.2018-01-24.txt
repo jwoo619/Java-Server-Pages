@@ -20,3 +20,13 @@
 0:0:0:0:0:0:0:1 - - [24/Jan/2018:13:26:36 +0900] "GET /Front_controller/update.do HTTP/1.1" 200 -
 0:0:0:0:0:0:0:1 - - [24/Jan/2018:13:26:41 +0900] "GET /Front_controller/select.do HTTP/1.1" 200 -
 0:0:0:0:0:0:0:1 - - [24/Jan/2018:13:26:44 +0900] "GET /Front_controller/delete.do HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2018:14:35:05 +0900] "GET / HTTP/1.1" 200 11418
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:35:07 +0900] "GET /forwarding/dispacher.jsp HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:35:32 +0900] "GET /forwarding/requestobj HTTP/1.1" 404 973
+127.0.0.1 - - [24/Jan/2018:14:36:14 +0900] "GET / HTTP/1.1" 200 11418
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:36:15 +0900] "GET /forwarding/dispacher.jsp HTTP/1.1" 200 344
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:36:22 +0900] "GET /forwarding/requestobj HTTP/1.1" 200 344
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:36:28 +0900] "GET /forwarding/requestobj2 HTTP/1.1" 200 76
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:36:40 +0900] "GET /forwarding/redirect.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:36:40 +0900] "GET /forwarding/requesetobj2 HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [24/Jan/2018:14:38:37 +0900] "GET /forwarding/requestobj2 HTTP/1.1" 200 76
