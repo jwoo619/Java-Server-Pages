@@ -1,0 +1,4 @@
+package com.javalec.ex.command;
+
+public interface Bcommand {
+}

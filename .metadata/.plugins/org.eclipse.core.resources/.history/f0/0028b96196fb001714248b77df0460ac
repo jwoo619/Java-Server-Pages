@@ -1,7 +1,0 @@
-package ex12;
-
-public class MemberDTO {
-	
-	private String name;
-
-}

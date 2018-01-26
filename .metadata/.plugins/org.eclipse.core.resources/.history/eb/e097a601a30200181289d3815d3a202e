@@ -1,0 +1,14 @@
+package com.javalec.ex.dao;
+
+import javax.activation.DataSource;
+
+public class BDao {
+	
+	DataSource dataSource;
+	
+	public BDao(){
+		
+	}
+	
+
+}

@@ -1,0 +1,32 @@
+package com.javalec.ex.dto;
+
+import java.sql.Timestamp;
+
+public class BDto {
+	
+	int bld;
+	String bName;
+	String bTitle;
+	String bContent;
+	Timestamp bDate;
+	int bHit;
+	int bGroup;
+	int bStep;
+	int bIndent;
+	
+	public BDto(){
+		
+	}
+	
+	public BDto(int bld , String bName , String bTitle , String bContent , Timestamp bDate , int bHit, int bGroup , int bStep , int bIndent){
+		this.bld = bld;
+		this.bName = bName;
+		this.bTitle = bTitle;
+		this.bContent = bContent;
+		this.bDate = bDate;
+		this.bName = bName;
+		this.bName = bName;
+		this.bName = bName;
+		
+	}
+}

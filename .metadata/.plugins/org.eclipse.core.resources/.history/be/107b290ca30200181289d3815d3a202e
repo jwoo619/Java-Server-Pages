@@ -1,0 +1,20 @@
+package com.javalec.ex.dao;
+
+import javax.activation.DataSource;
+
+public class BDao {
+	
+	DataSource dataSource;
+	
+	public BDao(){
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+
+}
