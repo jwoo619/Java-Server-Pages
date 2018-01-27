@@ -1,0 +1,8 @@
+package com.javalec.ex.command;
+
+import javax.servlet.http.*;
+public interface BCommand {
+	
+	void execute(HttpServletRequest request , HttpServletResponse response);
+	
+}

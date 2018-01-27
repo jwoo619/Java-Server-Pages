@@ -37,7 +37,7 @@
         password="1234"
         driverClassName="com.mysql.jdbc.Driver"
         factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
-        url="jdbc:mysql://localhost:3306/members"
+        url="jdbc:mysql://localhost:3306/mvc_board"
         logintimeout="100"
         maxActive="500"
         maxIdle="100"/>

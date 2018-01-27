@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Wed Jan 24 14:36:05 KST 2018
+#Sat Jan 27 23:48:09 KST 2018
+org.eclipse.jst.jee.server\:notice_board=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/notice_board
 org.eclipse.jst.jee.server\:JSTL=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/JSTL
 org.eclipse.jst.jee.server\:fileuploadex=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/fileuploadex
 org.eclipse.jst.jee.server\:Front\ controller=/Users/Jinwoo/Desktop/Java-Server-Pages/apache-tomcat-7.0.82/apache-tomcat-7.0.82/wtpwebapps/Front controller

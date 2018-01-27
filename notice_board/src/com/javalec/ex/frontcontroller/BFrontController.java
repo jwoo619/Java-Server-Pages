@@ -9,6 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.javalec.ex.command.BContentCommand;
+import com.javalec.ex.command.BDeleteCommand;
+import com.javalec.ex.command.BListCommand;
+import com.javalec.ex.command.BModifyCommand;
+import com.javalec.ex.command.BReplyCommand;
+import com.javalec.ex.command.BWriteCommand;
+import com.javalec.ex.command.Bcommand;
+
 /**
  * Servlet implementation class BFrontController
  */
@@ -43,7 +51,7 @@ public class BFrontController extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		
 		String viewPage= null;
-		BCommand command = null;
+		Bcommand command = null;
 		
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
@@ -72,7 +80,7 @@ public class BFrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "list.do";
 		} else if(com.equals("/reply_view.do")) {
-			command = new BReplyViewCommand();
+			command = new BReplyCommand();
 			command.execute(request, response);
 			viewPage = "reply_view.jsp";
 		} else if(com.equals("/reply.do")) {

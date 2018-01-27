@@ -1,0 +1,68 @@
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import= "javax.naming.Context"%>
+<%@ page import= "javax.naming.InitialContext"%>
+<%@ page import= "javax.naming.NamingException"%>
+<%@ page import= "javax.sql.DataSource"%>
+<%@ page import= "java.sql.SQLException"%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<% 
+try {
+    Context init = new InitialContext();
+           
+    DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/mysql");
+    ds.getConnection();
+    out.print("sucuess");
+    
+    String query = "select bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent from mvc_board order by bGroup desc, bStep asc;";
+	ResultSet resultSet = null;
+	
+	ArrayList<BDto> dtos = new ArrayList<BDto>();
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultSet = null;
+	System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+	try {
+	
+		connection = dataSource.getConnection();
+		
+		String query = "select bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent from mvc_board order by bGroup desc, bStep asc;";
+		preparedStatement = connection.prepareStatement(query);
+		resultSet = preparedStatement.executeQuery();
+		
+		while (resultSet.next()) {
+			int bId = resultSet.getInt("bId");
+			String bName = resultSet.getString("bName");
+			String bTitle = resultSet.getString("bTitle");
+			String bContent = resultSet.getString("bContent");
+			Timestamp bDate = resultSet.getTimestamp("bDate");
+			int bHit = resultSet.getInt("bHit");
+			int bGroup = resultSet.getInt("bGroup");
+			int bStep = resultSet.getInt("bStep");
+			int bIndent = resultSet.getInt("bIndent");
+			
+			BDto dto = new BDto(bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent);
+			dtos.add(dto);
+		}
+	
+	
+	
+} catch (NamingException e) {
+    e.printStackTrace();
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+%>
+</body>
+</html>
