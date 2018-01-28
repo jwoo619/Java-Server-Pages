@@ -22,21 +22,33 @@ public class BDao {
 			dataSource = (DataSource) ((InitialContext) context).lookup("java:comp/env/jdbc/mysql");
 		} catch (Exception e) {
 		}
-		
 	}
 	
 	public void write(String bName , String bTitle , String bContent){
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		int bId = 0;
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "insert into mvc_board( bName, bTitle, bContent, bHit, bGroup, bStep, bIndent) values ( ?, ?, ?, 0, max(index)+1, 0, 0 );";
-			preparedStatement = connection.prepareStatement(query);
+			
+			String query1 = "select bId from mvc_board order by bId desc limit 1;";
+			preparedStatement = connection.prepareStatement(query1);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()){
+				bId = resultSet.getInt("bId");
+			}
+			
+			
+			String query2 = "insert into mvc_board( bName, bTitle, bContent, bHit, bGroup, bStep, bIndent) values ( ?, ?, ?, 0, ?, 0, 0 );";
+			preparedStatement = connection.prepareStatement(query2);
 			preparedStatement.setString(1, bName);
 			preparedStatement.setString(2, bTitle);
 			preparedStatement.setString(3, bContent);
+			preparedStatement.setInt(4, bId+1);
 			int rn = preparedStatement.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("fail");
@@ -44,6 +56,7 @@ public class BDao {
 			try {
 				if(preparedStatement != null) preparedStatement.close();
 				if(connection != null) connection.close();
+				if(resultSet != null) resultSet.close();
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
@@ -75,7 +88,6 @@ public class BDao {
 				int bStep = resultSet.getInt("bStep");
 				int bIndent = resultSet.getInt("bIndent");
 				
-				System.out.println(bName);
 				BDto dto = new BDto(bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent);
 				dtos.add(dto);
 			}
@@ -256,8 +268,8 @@ public class BDao {
 		PreparedStatement preparedStatement = null;
 		
 		try {
-			connection = dataSource.getConnection();
-			String query = "insert into mvc_board (bId, bName, bTitle, bContent, bGroup, bStep, bIndent) values (mvc_board_seq.nextval, ?, ?, ?, ?, ?, ?)";
+			connection = dataSource.getConnection();	
+			String query = "insert into mvc_board (bName, bTitle, bContent, bGroup, bStep, bIndent) values ( ?, ?, ?, ?, ?, ?)";
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setString(1, bName);
@@ -336,5 +348,35 @@ public class BDao {
 			}
 		}
 	}
+	
+	public void test(){
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = dataSource.getConnection();
+			String query = "select bId from mvc_board order by bId desc limit 1;";
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()){
+				System.out.println(resultSet.getInt("bId"));
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+				if(resultSet != null) resultSet.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+	
+	
 	
 }

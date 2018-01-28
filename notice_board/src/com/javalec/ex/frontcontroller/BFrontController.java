@@ -14,6 +14,7 @@ import com.javalec.ex.command.BDeleteCommand;
 import com.javalec.ex.command.BListCommand;
 import com.javalec.ex.command.BModifyCommand;
 import com.javalec.ex.command.BReplyCommand;
+import com.javalec.ex.command.BReplyViewCommand;
 import com.javalec.ex.command.BWriteCommand;
 import com.javalec.ex.command.Bcommand;
 
@@ -80,7 +81,7 @@ public class BFrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "list.do";
 		} else if(com.equals("/reply_view.do")) {
-			command = new BReplyCommand();
+			command = new BReplyViewCommand();
 			command.execute(request, response);
 			viewPage = "reply_view.jsp";
 		} else if(com.equals("/reply.do")) {
